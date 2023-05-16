@@ -31,7 +31,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    permissions: {}
+    permissions:
+      pull-requests: write
     concurrency:
       # Shared concurrency group wih preview cleanup.
       group: "preview-${{ github.event.number }}"
