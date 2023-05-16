@@ -31,6 +31,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    permissions:
+      pull-requests: write # With restricted permissions
     concurrency:
       # Shared concurrency group wih preview cleanup.
       group: "preview-${{ github.event.number }}"
@@ -69,10 +71,10 @@ jobs:
       - name: Deploy
         # If run from a fork, GitHub write operations will fail.
         # See https://github.com/GoogleCloudPlatform/samples-style-guide/issues/56
-        if: ${{ !github.event.pull_request.head.repo.fork }}
+        # if: ${{ !github.event.pull_request.head.repo.fork }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.CONTENTS }} # contents read/write
           publish_dir: ./public
           destination_dir: ./previews/PR-${{ github.event.number }}
           commit_message: "stage: PR-${{ github.event.number }}: ${{ github.event.head_commit.message }}"
@@ -80,7 +82,7 @@ jobs:
       - name: Comment
         # If run from a fork, GitHub write operations will fail.
         # See https://github.com/GoogleCloudPlatform/samples-style-guide/issues/56
-        if: ${{ !github.event.pull_request.head.repo.fork }}
+        # if: ${{ !github.event.pull_request.head.repo.fork }}
         uses: actions/github-script@v6
         with:
           script: |

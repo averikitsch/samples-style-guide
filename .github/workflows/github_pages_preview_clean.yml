@@ -25,12 +25,13 @@ jobs:
   clean:
     # If run from a fork, GitHub write operations will fail.
     # See https://github.com/GoogleCloudPlatform/samples-style-guide/issues/56
-    if: ${{ !github.event.pull_request.head.repo.fork }}
+    # if: ${{ !github.event.pull_request.head.repo.fork }}
     runs-on: ubuntu-20.04
     concurrency:
       # Shared concurrency group wih preview staging.
       group: "preview-${{ github.event.number }}"
       cancel-in-progress: true
+    permissions: {}
     steps:
       - uses: actions/checkout@v3
         with:
