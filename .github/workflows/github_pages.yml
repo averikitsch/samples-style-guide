@@ -33,8 +33,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    permissions:
-      contents: write
+    permissions: {}
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
