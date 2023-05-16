@@ -23,8 +23,8 @@ as easy as possible for a user to run.
 specific best practices should be implemented and performed when interacting
 with our services.
 
-* **Idiomatic** - Samples should encourage idiomatic and best practices specific
-to language, framework, or service.
+* **Idiomatic - Samples should encourage idiomatic and best practices specific
+to language, framework, or service.**
 
 ### Principles {#principles}
 
