@@ -73,7 +73,7 @@ jobs:
         # if: ${{ !github.event.pull_request.head.repo.fork }}
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PUBLIC }}
+          github_token: ${{ secrets.CONTENTS }}
           publish_dir: ./public
           destination_dir: ./previews/PR-${{ github.event.number }}
           commit_message: "stage: PR-${{ github.event.number }}: ${{ github.event.head_commit.message }}"

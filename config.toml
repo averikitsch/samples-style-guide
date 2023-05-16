@@ -1,4 +1,4 @@
-baseURL = 'https://googlecloudplatform.github.io/samples-style-guide/'
+baseURL = 'https://averikitsch.github.io/samples-style-guide/'
 title = 'Samples Style Guide | Google Cloud'
 theme = ["docsy"]
 languageCode = 'en-us'
@@ -8,12 +8,12 @@ googleAnalytics = 'G-WJFDXY846K'
 
 [Params]
   copyright = 'Google LLC'
-  github_repo = "https://github.com/GoogleCloudPlatform/samples-style-guide"
+  github_repo = "https://github.com/averikitsch/samples-style-guide"
 
 [[menu.main]]
     name = "GitHub"
     weight = 50
-    url = "https://github.com/GoogleCloudPlatform/samples-style-guide"
+    url = "https://github.com/averikitsch/samples-style-guide"
     pre = "<i class='fab fa-github'></i>"
 
 [module]
